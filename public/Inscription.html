@@ -7,12 +7,10 @@
         <link rel="stylesheet" href="/css/nb.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
         <meta name="theme-Color" content="050510" />   
-        <!--<script src=""></script>
-        <script src=""></script> Ici les liens js -->
     </head>
     <body id="inscriptionPageContent" >
         <h2 class="texte">Création de l'âme</h2>
-         <p id="messageRetour" class="message-retour" aria-live="polite"></p>
+        <p id="messageRetour" class="message-retour" aria-live="polite"></p>
 
         <form id="formInscription" class="formContainer" novalidate>
 
@@ -43,22 +41,34 @@
             required />
         <p class="erreur-champ" id="errEmail"></p>
 
-            <input
-            type="password"
-            id="motDePasse"
-            name="motDePasse"
-            placeholder="Mot de passe (8 caractères min.)"
-            autocomplete="new-password"
-            required />
+            <div class="champMdp">
+                <input
+                type="password"
+                id="motDePasse"
+                name="motDePasse"
+                placeholder="Mot de passe (8 caractères min.)"
+                autocomplete="new-password"
+                required />
+                <button type="button" class="oeilMdp" aria-label="Afficher le mot de passe" onclick="toggleMdp('motDePasse', this)">
+                    <svg class="oeilIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    <svg class="oeilIconFerme" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                </button>
+            </div>
         <p class="erreur-champ" id="errMdp"></p>
 
-            <input
-            type="password"
-            id="confirmation"
-            name="confirmation"
-            placeholder="Confirmer mot de passe"
-            autocomplete="new-password"
-            required />
+            <div class="champMdp">
+                <input
+                type="password"
+                id="confirmation"
+                name="confirmation"
+                placeholder="Confirmer mot de passe"
+                autocomplete="new-password"
+                required />
+                <button type="button" class="oeilMdp" aria-label="Afficher la confirmation" onclick="toggleMdp('confirmation', this)">
+                    <svg class="oeilIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    <svg class="oeilIconFerme" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                </button>
+            </div>
         <p class="erreur-champ" id="errConf"></p>
 
             <button type="submit" id="btnInscrire"> Sceller mon âme</button>
@@ -67,6 +77,15 @@
             <a href="/connexion.html"><button> Déjà inscrit ?</button></a>
         </div> 
 
+        <script>
+        function toggleMdp(inputId, btn) {
+            const input = document.getElementById(inputId);
+            const isPassword = input.type === "password";
+            input.type = isPassword ? "text" : "password";
+            btn.querySelector(".oeilIcon").style.display      = isPassword ? "none"  : "block";
+            btn.querySelector(".oeilIconFerme").style.display = isPassword ? "block" : "none";
+        }
+        </script>
         <script src="/js/inscription.js"></script>
     </body>
 </html>
