@@ -850,7 +850,7 @@ input{
     border: 1px solid var(--dore);
     background-color: rgba(5,5,15,0.4);
     backdrop-filter: blur(0.5px);
-    padding: 50px;
+    padding: 30px;
     width: 400px;
     max-width: 90%;
     box-shadow: 0 0 5px var(--gold);
