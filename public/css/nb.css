@@ -115,6 +115,14 @@ button:hover {
 
 /* --- Inscirption/Connexion --- */
 
+#inscriptionPageContent {
+    background-color: rgb(2, 0, 0);
+}
+
+#connexionPageContent {
+    background-color: rgb(2, 0, 0);
+}
+
 /*form {
     justify-content: center;
     gap: 30px;
@@ -419,6 +427,11 @@ input{
    L'ORACLE DU DESTIN — Rituel CSS
    public/css/rituel.css
 ═══════════════════════════════════════════════════════ */
+
+#rituelPageContent {
+    background-color: rgb(2, 0, 0);
+
+}
 
 /* ── Étapes ── */
 
@@ -753,6 +766,10 @@ input{
 
 /*Tirage*/
 
+#tiragePageContent {
+    background-color: rgb(2, 0, 0);
+}
+
 #texteTirage {
     transition: opacity 1.4s ease, transform 1.4s ease;
     max-width: 90%;
@@ -943,6 +960,11 @@ input{
 }
 
 /* --- Mon Profil --- */
+
+#profilPageContent {
+    background-color: rgb(2, 0, 0);
+}
+
 .profilHeader{
     margin:30
 }
