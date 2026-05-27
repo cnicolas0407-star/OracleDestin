@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Le Rituel</title>
+        <link rel="stylesheet" href="/css/normalize.css" />
+        <link rel="stylesheet" href="/css/nb.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+        <meta name="theme-color" content="#050510" />
+        <script src="/js/rituel.js" defer></script>
+
+        <style>
+            /* ── Compteur de destins sous le bouton de voie ── */
+            .voieCompteur {
+                display: block;
+                font-size: 0.6em;
+                font-family: Cinzel;
+                letter-spacing: 0.07em;
+                margin-top: 10px;
+                opacity: 0.75;
+            }
+            #voieOrdinaire .voieCompteur  { color: var(--blanc); }
+            #voieAudacieuse .voieCompteur { color: var(--rouge-magique); }
+
+            /* ── Compteur sous chaque symbole ── */
+            .symboleCompteur {
+                font-size: 0.58em;
+                font-family: Cinzel;
+                letter-spacing: 0.06em;
+                opacity: 0.7;
+            }
+
+            /* ── Symbole épuisé ── */
+            .symboleBtn.epuise {
+                opacity: 0.35;
+                cursor: not-allowed;
+                pointer-events: none;
+                filter: grayscale(1);
+                border-color: rgba(245,245,245,0.12) !important;
+                box-shadow: none !important;
+            }
+            .symboleBtn.epuise .symboleNom,
+            .symboleBtn.epuise .symboleCompteur {
+                color: rgba(245,245,245,0.4);
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- ── Étape 1 : Choix de la voie ── -->
+        <div id="etape1" class="etape active">
+            <header>
+                <h1>Choisis ta Voie</h1>
+                <p>Deux voies s'offrent à toi. Chacune a son prix. <br>
+                Réfléchis bien à ce que tu es prêt à affronter, et à ce que tu espères trouver au bout du chemin.</p>
+            </header>
+
+            <div class="choix">
+                <div id="voieOrdinaire" class="voie" onclick="choisirVoie('ordinaire')">
+                    <h2>Voie Ordinaire</h2>
+                    <p>Des destins plus faciles à porter mais impossibles à prévoir.</p>
+                    <button id="boutonVoieOrdinaire" type="button">
+                        Je choisis la Voie Ordinaire
+                    </button>
+                    <span class="voieCompteur" id="compteurOrdinaire">chargement…</span>
+                </div>
+                <div id="voieAudacieuse" class="voie" onclick="choisirVoie('audacieuse')">
+                    <h2>Voie Audacieuse</h2>
+                    <p>Des destins plus risqués, demandant ingéniosité et détermination.</p>
+                    <button id="boutonVoieAudacieuse" type="button">
+                        Je choisis la Voie Audacieuse
+                    </button>
+                    <span class="voieCompteur" id="compteurAudacieuse">chargement…</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── Étape 2 : Question absurde ── -->
+        <div id="etape2" class="etape">
+            <header>
+                <h1>L'Oracle t'interroge</h1>
+                <p>Pour mieux cerner ton destin, l'Oracle doit mieux te connaître en te posant une question. A toi de répondre avec sincérité.</p>
+                <p> Ta question est :</p>
+                <p id="texteQuestion">…</p>
+            </header>
+
+            <div class="questionContainer">
+                <textarea
+                    id="reponseQuestion"
+                    placeholder="Ta réponse ici…"
+                    rows="3"
+                    maxlength="200"
+                ></textarea>
+                <button id="btnValiderQuestion" type="button" onclick="validerQuestion()">Continuer</button>
+            </div>
+        </div>
+
+        <!-- ── Étape 3 : Choix du symbole ── -->
+        <div id="etape3" class="etape">
+            <header>
+                <h1>Choisis ton Symbole</h1>
+                <p>Choisis le symbole qui te correspond, ou celui qui t'attire sans que tu saches pourquoi.<br>
+                Ton symbole influencera grandement ton destin.</p>
+            </header>
+
+            <div class="symbolesGrid">
+                <button class="symboleBtn" data-symbole="lune" type="button" onclick="choisirSymbole('lune')">
+                    <span class="symboleSvg">☽</span>
+                    <span class="symboleNom">Lune</span>
+                    <span class="symboleDesc">Mystère &amp; illusion</span>
+                    <span class="symboleCompteur" id="compteurSymboleLune"></span>
+                </button>
+                <button class="symboleBtn" data-symbole="epees" type="button" onclick="choisirSymbole('epees')">
+                    <span class="symboleSvg">⚔︎</span>
+                    <span class="symboleNom">Epées</span>
+                    <span class="symboleDesc">Honneur &amp; bravoure</span>
+                    <span class="symboleCompteur" id="compteurSymboleEpees"></span>
+                </button>
+                <button class="symboleBtn" data-symbole="couronne" type="button" onclick="choisirSymbole('couronne')">
+                    <span class="symboleSvg">♛</span>
+                    <span class="symboleNom">Couronne</span>
+                    <span class="symboleDesc">Pouvoir &amp; Puissance</span>
+                    <span class="symboleCompteur" id="compteurSymboleCouronne"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- ── Modale de confirmation (symbole + voie) ── -->
+        <div id="overlayConfirmation">
+            <div id="modaleConfirmation">
+                <h2 id="modaleTitre"></h2>
+                <p id="modaleTexte"></p>
+                <div id="modaleActions">
+                    <button id="btnConfirmer" type="button" onclick="procederTirage()">Interroger l'Oracle</button>
+                </div>
+                <button id="btnAnnuler" type="button" onclick="fermerModale()">Changer de Symbole</button>
+            </div>
+        </div>
+
+    </body>
+</html>

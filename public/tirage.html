@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Révélation du destin</title>
+        <link rel="stylesheet" href="/css/normalize.css" />
+        <link rel="stylesheet" href="/css/nb.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+        <meta name="theme-color" content="#050510" />
+        <script src="/js/tirage.js" defer></script>
+    </head>
+    <body>
+
+        <div id="tirageContent">
+
+            <!-- Phase de suspense -->
+            <div id="texteTirage" class="texteTirage"></div>
+
+            <!-- Révélation principale -->
+            <div id="revelationDestin"></div>
+
+            <!-- Détails enrichis -->
+            <div id="destinsDetails">
+
+                <div id="carteSigne" class="carteDetail">
+                    <div class="carteDetailLabel">✦ Prophétie</div>
+                    <p id="texteSigne"></p>
+                </div>
+                
+                <div id="carteArtefact" class="carteDetail">
+                    <div class="carteDetailLabel">◈ Artefact obligatoire</div>
+                    <p id="texteArtefact"></p>
+                </div>
+
+                <div id="carteMission" class="carteDetail">
+                    <div class="carteDetailLabel">⚑ Mission secrète à réaliser</div>
+                    <p id="texteMission"></p>
+                </div>
+
+                
+
+            </div>
+
+            <!-- Serment (après révélation) -->
+            <div id="sermentZone">
+                <p id="texteSerment">
+                    "Ton destin est désormais scellé. <br>
+                    Jure de suivre la voie qui t’a été révélée, et d’accomplir les épreuves qui t’attendent. <br>
+                    Que les forces du destin te guident, et que ta volonté soit inébranlable.<br>
+                    Tu pourras ensuite accéder à ton profil pour suivre ta progression, et découvrir les secrets de ton destin."
+                </p>
+                <button id="btnSerment" onclick="jurer()">Je le jure</button>
+            </div>
+
+            <!-- Actions finales (après serment) -->
+            <div id="actions" class="actions">
+                <button id="btnProfil" onclick="voirProfil()">Voir mon profil</button>
+            </div>
+
+        </div>
+
+    </body>
+</html>

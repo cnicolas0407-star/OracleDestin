@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Tirage du Destin</title>
+        <link rel="stylesheet" href="/css/normalize.css" />
+        <link rel="stylesheet" href="/css/nb.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+        <meta name="theme-Color" content="050510" />     
+        <!--<script src=""></script>
+        <script src=""></script> Ici les liens js -->
+    </head>
+    <body id="accueilPageContent" class="accueil" >
+
+    <button id="btnDeconnexion">Se déconnecter</button>
+
+    <!-- ── Intro ── -->
+    <div id="accueilIntro">
+        <p class="ornement">✦ ✦ ✦</p>
+        <h1>Ton destin n'attend plus que toi.</h1>
+        <p>
+            L'Oracle te révélera un destin unique et secret à incarner.<br>
+            Les choix que tu feras au cours des prochaines minutes influenceront le destin attribué.
+        </p>
+    </div>
+
+    <!-- ── Titre section révélations ── -->
+    <p id="introRevelations">En plus du destin, l'Oracle te donnera 3 indications :</p>
+
+    <!-- ── Les trois révélations ── -->
+    <div id="revelations">
+
+        <div class="carteRevelation" id="carte1">
+            <div class="revelationIcone">◈</div>
+            <div class="revelationCorps">
+                <span class="revelationLabel">Ce que tu devras porter :</span>
+                <p class="revelationTitre">Un artefact obligatoire</p>
+                <!-- <p class="revelationDesc">Accesoire, vêtement ou tout autre élément que tu devras porter en complément de ton costume.</p> -->
+            </div>
+        </div>
+
+        <div class="carteRevelation" id="carte2">
+            <div class="revelationIcone">⚑</div>
+            <div class="revelationCorps">
+                <span class="revelationLabel">Ce que tu devras accomplir</span>
+                <p class="revelationTitre">Une mission secrète</p>
+                <!-- <p class="revelationDesc">Connue de toi seul, tu devras l'accomplir durant la soirée.</p> -->
+            </div>
+        </div>
+
+        <div class="carteRevelation" id="carte3">
+            <div class="revelationIcone">✦</div>
+            <div class="revelationCorps">
+                <span class="revelationLabel">Ce que l'Oracle voit en toi</span>
+                <p class="revelationTitre">Une prophétie</p>
+                <!-- <p class="revelationDesc">Une vérité absolue qui te suivra toute ta vie.</p> -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ── Avertissement ── -->
+    <p id="avertissement">
+        Le destin ne se consulte qu'une seule fois.<br>
+        <em>L'Oracle ne pardonne pas les destins mal incarnés.</em>
+    </p>
+
+    <!-- ── CTA ── -->
+    <div id="ctaZone">
+        <a href="rituel.html">
+            <button id="btnRituel">Consulter l'Oracle</button>
+        </a>
+    </div>
+
+    <script src="/js/deconnexion.js"></script>
+
+    <script>
+        // Apparition décalée des trois cartes
+        document.addEventListener("DOMContentLoaded", () => {
+            const cartes = document.querySelectorAll(".carteRevelation");
+            cartes.forEach((carte, i) => {
+                setTimeout(() => carte.classList.add("visible"), 4700 + i * 280);
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Ton Destin Révélé</title>
+        <link rel="stylesheet" href="/css/normalize.css" />
+        <link rel="stylesheet" href="/css/nb.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+        <meta name="theme-color" content="#050510" />
+    </head>
+    <body>
+
+        <button id="btnDeconnexion">Quitter</button>
+
+        <header id="profilHeader" class="profilHeader">
+            <h1 id="profilTitre">Le destin est révélé :</h1>
+            <p>Ta voie et ton destin sont liés à ton âme.</p>
+            <p>Prépare ton costume, l'aventure commence maintenant.</p>
+        </header>
+
+        <main id="ProfilPage" class="ProfilPage">
+            <div id="profil" class="profil">
+
+                <!-- Carte destin principale -->
+                <div id="monDestin">
+                    <div style="width:100%;">
+                        <p><em id="profilSymbole">…</em></p>
+                        <p id="profilVoie">…</p>
+                        <h2 id="profilDestin">…</h2>
+                        <p>Les contraintes de ton destin :</p>
+
+                        <!-- Signe, mission, artefact -->
+                        <div id="profilDetails">
+                        
+                            <div class="carteDetail" id="profilCarteArtefact">
+                                <div class="carteDetailLabel">◈ Artefact obligatoire</div>
+                                <p id="profilArtefact">…</p>
+                            </div>
+
+                            <div class="carteDetail" id="profilCarteMission">
+                                <div class="carteDetailLabel">⚑ Mission secrète à accomplir</div>
+                                <p id="profilMission">…</p>
+                            </div>
+
+                            <div class="carteDetail" id="profilCarteSigne">
+                                <div class="carteDetailLabel">✦ Ta prophétie</div>
+                                <p id="profilSigne">…</p>
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte statistiques -->
+                <div id="statistiques">
+                    <h2>Les statistiques de l'Oracle</h2>
+                    <p><em id="statTotal">…</em> destins ont été révélés</p>
+
+                    <div class="barreStats">
+                        <div class="barreLabel">
+                            <span id="statOrdinaire">…</span> Ordinaires
+                        </div>
+                        <div class="barreContainer">
+                            <div id="barreOrdinaire" class="barreFill ordinaire"></div>
+                            <div id="barreAudacieuse" class="barreFill audacieuse"></div>
+                        </div>
+                        <div class="barreLabel">
+                            <span id="statAudacieuse">…</span> Audacieux
+                        </div>
+                    </div>
+
+                    <p style="margin-top:20px; font-size:0.7em; opacity:0.7;">Symboles choisis</p>
+                    <div class="barreSymboles">
+                        <div class="statSymbole">
+                            <span class="statSymboleIcon">☽</span>
+                            <span id="statLune">…</span>
+                        </div>
+                        <div class="statSymbole">
+                            <span class="statSymboleIcon">⚔︎</span>
+                            <span id="statEpees">…</span>
+                        </div>
+                        <div class="statSymbole">
+                            <span class="statSymboleIcon">♛</span>
+                            <span id="statCouronne">…</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </main>
+
+        <script src="/js/profil.js"></script>
+        <script src="/js/deconnexion.js"></script>
+
+    </body>
+</html>

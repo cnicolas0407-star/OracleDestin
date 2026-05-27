@@ -1,0 +1,14 @@
+# ── Dépendances Node ──────────────────────────
+node_modules/
+
+# ── Variables d'environnement (contient tes mots de passe) ──
+.env
+
+# ── Logs ─────────────────────────────────────
+*.log
+npm-debug.log*
+
+# ── Système ───────────────────────────────────
+.DS_Store        # fichier Mac
+Thumbs.db        # fichier Windows
+.vercel

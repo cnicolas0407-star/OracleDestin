@@ -1,0 +1,1220 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Uncial+Antiqua&display=swap');
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+:root{
+    --dore:#d4af37;
+    --blanc:#f5f5f5;
+    --gold:#8c6c1c;
+    --rouge-sang: #b22222;
+    --rouge-sombre: #7a1f1f;
+    --rouge-magique:#e85848;
+    --black:#050510;
+}
+
+/* --- Styles généraux --- */
+
+body {
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.2),
+            rgba(0,0,0,0.4)
+        ),
+        url('/images/bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll; /* fixed bug sur iOS */
+    font-size: 1.7rem;
+    font-family: Cormorant;
+    color: var(--blanc);
+    text-align: center;
+    justify-content: center;
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100dvh; /* évite les bandes sur mobile */
+    display: flex;
+    flex-direction: column;
+}
+
+h1,h2 {
+    font-family: Cinzel;
+    font-size: 1.5em;
+    color: var(--dore);
+    text-shadow: 
+        0 0 5px black,
+        0 0 10px black,
+        0 0 15px rgba(212,175,55,0.5);
+}
+h1, h2, p {
+    text-shadow: 0 0 10px black, 0 0 5px black;
+}
+
+.texte{
+  
+    padding: 20px;
+    border-radius: 10px;
+}
+
+button {
+    background-color: rgba(10,10,20,0.7);
+    color: var(--dore);
+    border: 2px solid var(--dore);
+    padding: 12px 25px;
+    margin-bottom: 10px;
+    font-size: 0.8em;
+    border-radius: 7%; ;
+    font-weight: bolder;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(0,0,0,0.6);
+    transition: 1s;
+    text-decoration: none;
+}
+button:hover {
+    background-color: #f5be0a;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #d4af37;
+    color: black;
+}
+
+
+/* --- Styles spécifiques --- */
+
+/*--Index---*/
+.index{
+    display: grid;
+    place-items: center;
+    height: 80vh;
+}
+
+#indexPageContent {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--dore);
+    padding: 20px 30px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 0 20px var(--gold);
+    max-width: 650px;
+    max-width: 90%;
+    margin : 0 20px;
+    animation:apparition 1.5s ease;
+}
+
+/* --- Inscirption/Connexion --- */
+
+/*form {
+    justify-content: center;
+    gap: 30px;
+    display: grid;
+}
+
+.formContainer{
+    padding: 20px;
+    flex-direction: column;
+}
+
+input{
+    width: 100%;
+    padding: 5px;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: whitesmoke;
+}*/
+
+/* ── Messages de retour ── */
+.message-retour {
+    font-size: 0.9em;
+    font-style: italic;
+    margin: 10px auto;
+    padding: 10px 16px;
+    border-radius: 8px;
+    max-width: 500px;
+    display: none;
+}
+.message-retour.succes {
+    display: block;
+    background: rgba(20,70,20,0.45);
+    border: 1px solid rgba(80,180,80,0.35);
+    color: #8ed48e;
+}
+.message-retour.erreur {
+    display: block;
+    background: rgba(80,10,10,0.5);
+    border: 1px solid rgba(200,60,60,0.4);
+    color: #e85848;
+}
+
+/* ── Erreurs sous les champs ── */
+.erreur-champ {
+    font-size: 0.75em;
+    color: #e85848;
+    font-style: italic;
+    margin: -8px 0 8px;
+    display: none;
+}
+
+/* ── Formulaire ── */
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.formContainer input {
+    background: rgba(5,5,16,0.85);
+    border: 1px solid rgba(212,175,55,0.3);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-family: Cormorant;
+    font-size: 1em;
+    color: var(--blanc);
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.formContainer input:focus {
+    border-color: var(--dore);
+    box-shadow: 0 0 8px rgba(212,175,55,0.2);
+}
+
+.formContainer input::placeholder {
+    color: rgba(237, 233, 225, 0.483);
+    font-style: italic;
+}
+
+/* ══════════════════════════════════════
+    PAGE ACCUEIL — styles spécifiques
+══════════════════════════════════════ */
+
+.accueil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 60px 20px 80px;
+    box-sizing: border-box;
+}
+
+#accueilPageContent {
+    background-color: rgba(5,5,15,0.5);
+    border: 1px solid var(--dore);
+    padding: 30px 30px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 0 5px var(--gold);
+    max-width: 700px;
+    max-width: 90%;
+    margin : 10px 20px;
+    animation:apparition 1.5s ease;
+}
+
+/* ── Séparateur ornemental ── */
+.ornement {
+    color: var(--dore);
+    opacity: 0.5;
+    font-size: 0.9em;
+    letter-spacing: 0.3em;
+    margin: 8px 0;
+}
+
+/* ── Bloc intro ── */
+#accueilIntro {
+    max-width: 560px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: apparition 1.2s ease 0.2s forwards;
+}
+
+#accueilIntro h1 {
+    font-size: 1.3em;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+#accueilIntro p {
+    font-size: 0.82em;
+    line-height: 1.8;
+    opacity: 0.85;
+    margin: 0 0 10px;
+}
+
+/* ── Note rituel ── */
+#noteRituel {
+    max-width: 460px;
+    text-align: center;
+    font-size: 0.75em;
+    font-style: italic;
+    color: rgba(212,175,55,0.7);
+    line-height: 1.75;
+    margin: 22px 0 0;
+    opacity: 0;
+    animation: apparition 0.8s ease 1s forwards;
+}
+
+#noteRituel em {
+    display: block;
+    margin-top: 10px;
+    color: rgba(232,88,72,0.8);
+    font-style: italic;
+}
+
+/* ── Intro révélations ── */
+#introRevelations {
+    max-width: 460px;
+    text-align: center;
+    font-family: Cinzel;
+    font-size: 0.6em;
+    letter-spacing: 0.12em;
+    color: var(--dore);
+    opacity: 0;
+    margin: 25px 0 4px;
+    animation: apparition 2s ease 3s forwards;
+}
+
+/* ── Avertissement ── */
+#avertissement em {
+    display: block;
+    margin-top: 6px;
+    color: rgba(232,88,72,0.75);
+    font-style: italic;
+}
+
+/* ── Les trois révélations ── */
+#revelations {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 520px;
+    width: 100%;
+    margin: 20px 0 44px;
+}
+
+.carteRevelation {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: rgba(5,5,15,0.55);
+    border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 12px;
+    padding: 20px 24px;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.7s ease, transform 0.7s ease,
+                border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.carteRevelation:hover {
+    border-color: rgba(212,175,55,0.45);
+    box-shadow: 0 0 18px rgba(212,175,55,0.1);
+}
+
+.carteRevelation.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.revelationIcone {
+    font-size: 1.6em;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+    opacity: 0.85;
+}
+
+.revelationCorps {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.revelationLabel {
+    font-family: Cinzel;
+    font-size: 0.52em;
+    color: var(--dore);
+    letter-spacing: 0.14em;
+    opacity: 0.9;
+}
+
+.revelationTitre {
+    font-family: Cinzel;
+    font-size: 0.75em;
+    color: var(--blanc);
+    margin: 0;
+}
+
+.revelationDesc {
+    font-size: 0.72em;
+    line-height: 1.6;
+    opacity: 0.72;
+    margin: 0;
+}
+
+/* ── Avertissement ── */
+#avertissement {
+    max-width: 460px;
+    text-align: center;
+    font-size: 0.72em;
+    font-style: italic;
+    opacity: 0;
+    color: rgba(212,175,55,0.65);
+    border-top: 1px solid rgba(212,175,55,0.15);
+    border-bottom: 1px solid rgba(212,175,55,0.15);
+    padding: 14px 0;
+    margin-top: 0;
+    margin-bottom: 36px;
+    animation: apparition 0.8s ease 7s forwards;
+    line-height: 1.7;
+    background-color: #05051043;
+}
+
+/* ── CTA ── */
+#ctaZone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    opacity: 0;
+    animation: apparition 0.8s ease 7s forwards;
+}
+
+#btnRituel {
+    font-family: Cinzel;
+    font-size: 0.75em;
+    letter-spacing: 0.1em;
+    padding: 16px 40px;
+    border: 2px solid var(--dore);
+    color: var(--dore);
+    background: rgba(5,5,15,0.7);
+    transition: 0.4s;
+}
+
+#btnRituel:hover {
+    background: var(--dore);
+    color: var(--black);
+    box-shadow: 0 0 28px rgba(212,175,55,0.4);
+    transform: scale(1.04);
+}
+
+/* ═══════════════════════════════════════════════════════
+   L'ORACLE DU DESTIN — Rituel CSS
+   public/css/rituel.css
+═══════════════════════════════════════════════════════ */
+
+/* ── Étapes ── */
+
+.etape {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    padding: 35px 20px;
+    animation: apparition 0.8s ease;
+}
+
+.etape.active {
+    display: flex;
+}
+
+.etape header {
+    max-width: 600px;
+    text-align: center;
+}
+
+.etape header p {
+    font-size: 0.85em;
+    opacity: 0.85;
+    line-height: 1.6;
+}
+
+/* ── Grille des symboles ── */
+
+.symbolesGrid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.symboleBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 180px;
+    padding: 30px 20px;
+    background: rgba(5,5,15,0.6);
+    border: 2px solid rgba(212,175,55,0.4);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.4s;
+    color: var(--blanc);
+    font-family: Cormorant;
+}
+
+.symboleBtn:hover,
+.symboleBtn.selectionne {
+    border-color: var(--dore);
+    box-shadow: 0 0 20px rgba(212,175,55,0.4);
+    background: rgba(15,15,30,0.85);
+    transform: translateY(-4px) scale(1.03);
+    color: var(--dore);
+}
+
+.symboleSvg {
+    font-size: 2.8em;
+    line-height: 1;
+}
+
+.symboleNom {
+    font-family: Cinzel;
+    font-size: 1em;
+    color: var(--dore);
+}
+
+.symboleDesc {
+    font-size: 0.7em;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+/* ── Question absurde ── */
+
+.questionContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+
+#texteQuestion {
+    font-size: 1.1em;
+    font-style: italic;
+    color: var(--dore);
+    text-shadow: 0 0 10px rgba(212,175,55,0.3);
+}
+
+#reponseQuestion {
+    width: 100%;
+    background: rgba(5,5,16,0.85);
+    border: 1px solid rgba(212,175,55,0.3);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-family: Cormorant;
+    font-size: 1em;
+    color: var(--blanc);
+    outline: none;
+    resize: none;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+#reponseQuestion:focus {
+    border-color: var(--dore);
+    box-shadow: 0 0 8px rgba(212,175,55,0.2);
+}
+
+#reponseQuestion::placeholder {
+    color: rgba(240,232,216,0.25);
+    font-style: italic;
+}
+
+/* ── Indicateur d'étape ── */
+
+.etapesIndicateur {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.etapeDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(212,175,55,0.25);
+    transition: background 0.4s;
+}
+
+.etapeDot.actif {
+    background: var(--dore);
+    box-shadow: 0 0 6px rgba(212,175,55,0.5);
+}
+
+
+/* --- Choix de la voie --- */
+
+.choix {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 35px;
+    flex-wrap:wrap;
+}
+.voie:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #b22222;
+    background: rgba(40,0,0,0.8);
+    cursor: pointer;
+
+}
+.voie{
+    transition: 0.5s;
+}
+
+
+#voieOrdinaire {
+    border: 2px solid var(--blanc);
+    background-color: rgba(20,20,30,0.7);
+    backdrop-filter: blur(0.5px);
+    padding: 20px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 0 10px var(--blanc);
+    border-radius: 10px;
+    text-align: center;
+    animation:apparition 1s ease;
+}
+#voieOrdinaire h2 {
+    color: var(--blanc);
+}
+#boutonVoieOrdinaire {
+    color: var(--blanc);
+    border: 2px solid var(--blanc);
+    box-shadow: 0 0 8px rgba(0,0,0,0.6);
+    transition: 0.5s;
+}
+#boutonVoieOrdinaire:hover {
+    background-color: var(--blanc);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--blanc);
+    color: var(--black);
+}
+
+
+#voieAudacieuse {
+    background-color: rgba(20,20,30,0.7);
+    backdrop-filter: blur(0.5px);
+    padding: 20px;
+    width: 400px;
+    max-width: 90%;
+    border: 2px solid var(--rouge-magique);
+    box-shadow: 0 0 10px var(--rouge-magique);
+    border-radius: 10px;
+    text-align: center;
+    animation:apparition 1.5s ease;
+}
+#voieAudacieuse h2 {
+    color: var(--rouge-magique);
+}
+#boutonVoieAudacieuse {
+    color: var(--rouge-magique);
+    border: 2px solid var(--rouge-magique);
+    box-shadow: 0 0 8px rgba(0,0,0,0.6);
+    transition: 1s;
+}
+#boutonVoieAudacieuse:hover {
+    background-color: var(--rouge-magique);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--rouge-magique);
+    color: var(--black);
+}
+
+
+#overlayConfirmation {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.75);
+    backdrop-filter: blur(4px);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+#overlayConfirmation.show {
+    display: flex;
+    animation: apparition 0.5s ease;
+}
+
+/* ── Voie épuisée ── */
+.voie.epuise {
+    opacity: 0.35;
+    filter: grayscale(1);
+    cursor: not-allowed;
+    pointer-events: none;
+}
+.voie.epuise button {
+    border-color: rgba(245,245,245,0.15) !important;
+    color: rgba(245,245,245,0.4) !important;
+    box-shadow: none !important;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+.voie.epuise .voieCompteur {
+    color: rgba(245,245,245,0.4) !important;
+}
+
+#modaleConfirmation {
+    border-radius: 12px;
+    padding: 40px;
+    width: 420px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+#modaleConfirmation.ordinaire {
+    border: 2px solid var(--blanc);
+    background-color: var(--black);
+    box-shadow: 0 0 30px rgba(245,245,245,0.3);
+}
+#modaleConfirmation.ordinaire h2 {
+    color: var(--blanc);
+}
+#btnConfirmer.ordinaire {
+    color: var(--blanc);
+    border: 2px solid var(--blanc);
+}
+#btnConfirmer.ordinaire:hover {
+    background-color: var(--blanc);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--blanc);
+    color: var(--black);
+}
+
+#modaleConfirmation.audacieuse {
+    border: 2px solid var(--rouge-magique);
+    background-color: var(--black);
+    box-shadow: 0 0 30px rgba(232,88,72,0.3);
+}
+#modaleConfirmation.audacieuse h2 {
+    color: var(--rouge-magique);
+}
+#btnConfirmer.audacieuse {
+    color: var(--rouge-magique);
+    border: 2px solid var(--rouge-magique);
+}
+#btnConfirmer.audacieuse:hover {
+    background-color: var(--rouge-magique);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--rouge-magique);
+    color: var(--black);
+}
+
+#modaleActions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#btnAnnuler {
+    color: var(--blanc);
+    border: 1px solid rgba(245, 245, 245, 0.4);
+    font-size: 0.65em;
+    opacity: 0.7;
+}
+#btnAnnuler:hover {
+    opacity: 1;
+    background-color: transparent;
+    box-shadow: none;
+    color: var(--blanc);
+}
+
+
+/*Tirage*/
+
+#texteTirage {
+    transition: opacity 1.4s ease, transform 1.4s ease;
+    max-width: 90%;
+    color: rgba(247, 183, 64, 0.998);
+}
+
+.show {
+    opacity: 1;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.actions{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.actions.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+#btnChangerDestin {
+    color: var(--rouge-magique);
+    border: 1px solid var(--rouge-magique);
+    box-shadow: 0 0 8px rgba(0,0,0,0.6);
+    transition: 1s;
+    padding: 8px 20px;
+    font-size: 0.65em;
+    transition: 1s;
+}
+#btnChangerDestin:hover {
+    background-color: var(--rouge-magique);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--rouge-magique);
+    color: var(--black);
+}
+
+#btnProfil {
+    color: var(--blanc);
+    border: 1px solid var(--blanc);
+    box-shadow: 0 0 8px rgba(0,0,0,0.6);
+    transition: 0.5s;
+    padding: 8px 20px;
+    font-size: 0.65em;
+    transition: 1s;
+    
+}
+#btnProfil:hover {
+    background-color: var(--blanc);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--blanc);
+    color: var(--black);
+}
+
+/* ── Détails enrichis et serment — voir blocs consolidés plus bas ── */
+
+/* ── Tirage — layout fixe ── */
+
+#tirageContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    gap: 30px;
+    min-height: 100dvh;
+    justify-content: center;
+    font-size: 1.45em;
+}
+
+#revelationDestin {
+    border: 1px solid var(--dore);
+    background-color: rgba(5,5,15,0.4);
+    backdrop-filter: blur(0.5px);
+    padding: 50px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 0 5px var(--gold);
+    border-radius: 10px;
+    text-align: center;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 1.3em;
+    color: var(--dore);
+    text-shadow: 
+        0 0 5px black,
+        0 0 10px black,
+        0 0 20px rgba(212,175,55,0.5);
+    display: flex; /* ← toujours flex, jamais none */
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    visibility: hidden; /* ← invisible mais présent dans le layout */
+}
+
+#revelationDestin.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    animation: none; /* ← neutralise l'animation apparition existante */
+}
+
+#destinsDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#destinsDetails.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.carteDetail {
+    border: 1px solid rgba(212,175,55,0.3);
+    background: rgba(5,5,15,0.6);
+    border-radius: 10px;
+    padding: 16px 20px;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.carteDetail.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.carteDetailLabel {
+    font-family: Cinzel;
+    font-size: 0.55em;
+    color: var(--dore);
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+    opacity: 0.8;
+}
+
+#sermentZone {
+    /* max-width: 500px; */
+    font-style: italic;
+    font-size: 0.9em;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease;
+}
+
+#sermentZone.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.carteDetail p {
+    margin: 0;
+    font-size: 0.6em;
+    color: var(--blanc);
+    line-height: 1.6;
+    text-shadow: none;
+}
+
+#texteSerment {
+    font-size: 0.5em;
+    font-style: italic;
+    color: rgba(212,175,55,0.7);
+    border-left: 2px solid rgba(212,175,55,0.3);
+    padding-left: 16px;
+    text-align: left;
+    margin: 0;
+}
+
+#btnSerment {
+    font-family: Cinzel;
+    letter-spacing: 0.08em;
+    color: var(--dore);
+    border: 2px solid var(--dore);
+    padding: 12px 32px;
+    transition: 0.4s;
+}
+
+/* --- Mon Profil --- */
+.profilHeader{
+    margin:30
+}
+
+.profilHeader {
+    display: flex;
+    flex-direction: column;  /* ✦ AJOUTER */
+    align-items: center;     /* ✦ AJOUTER */
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+
+
+.profil {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin:15px 20px;
+    flex-wrap:wrap;
+}
+
+#monDestin{
+    display: flex;
+    border: 2px solid var(--rouge-sang);
+    background-color: rgba(0, 0, 0, 0.579);
+    backdrop-filter: blur(0.5px);
+    padding: 20px;
+    max-width: 400px;
+    max-width: 90%;
+    box-shadow: 0 0 15px var(--rouge-sang);
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    animation:apparition 1.5s ease;
+}
+#monDestin h2 {
+    color: var(--rouge-sang);
+}
+
+#profilArtefacts {
+    font-size: 1em;
+}
+
+#statistiques {
+    border: 2px solid var(--gold);
+    background-color: rgba(20,20,30,0.7);
+    backdrop-filter: blur(0.5px);
+    padding: 20px;
+    max-width: 400px;
+    max-width: 90%;
+    box-shadow: 0 0 10px var(--gold);
+    border-radius: 10px;
+    text-align: center;
+    animation:apparition 1.5s ease;
+}
+
+#boutonSecondeChance:hover{
+    background-color:#f5be0a;
+}
+
+.retourAccueil {
+    margin-top: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   ✦ AJOUTS PROFIL — à coller à la fin de nb.css
+═══════════════════════════════════════════════════════ */
+
+/* ── Header profil ────────────────────────────────── */
+
+.profilHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    justify-content: center;
+    padding: 30px 20px 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.profilHeader p {
+    margin: 0;
+}
+
+/* ── Bouton déconnexion fixe en haut à droite ─────── */
+
+#btnDeconnexion {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    font-size: 0.5em;
+    padding: 6px 14px;
+    opacity: 0.5;
+    border: 1px solid rgba(245,245,245,0.3);
+    color: var(--blanc);
+    background: rgba(5,5,15,0.6);
+    z-index: 999;
+    transition: opacity 0.3s, background 0.3s;
+}
+
+#btnDeconnexion:hover {
+    opacity: 1;
+    background: rgba(5,5,15,0.9);
+    box-shadow: none;
+    transform: none;
+    color: var(--blanc);
+}
+
+/* ── Carte Mon Destin ─────────────────────────────── */
+
+#monDestin {
+    display: flex;
+    border: 2px solid var(--rouge-sang);
+    background-color: rgba(0,0,0,0.58);
+    backdrop-filter: blur(0.5px);
+    padding: 30px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 0 15px var(--rouge-sang);
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    /* ✦ MODIFIÉ — animation déclenchée par JS via classe .visible */
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#monDestin.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ✦ NOUVEAU — le destin affiché en grand à la place du titre */
+#monDestin h2 {
+    color: var(--rouge-sang);
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+/* ✦ NOUVEAU — couleurs de la voie */
+.voieOrdinaire {
+    color: var(--blanc);
+    font-style: italic;
+}
+
+.voieAudacieuse {
+    color: var(--rouge-magique);
+    font-style: italic;
+}
+
+/* ── Carte Statistiques ───────────────────────────── */
+
+#statistiques {
+    border: 2px solid var(--gold);
+    background-color: rgba(20,20,30,0.7);
+    backdrop-filter: blur(0.5px);
+    padding: 30px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 0 10px var(--gold);
+    border-radius: 10px;
+    text-align: center;
+    /* ✦ MODIFIÉ — animation déclenchée par JS via classe .visible */
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+
+#statistiques.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ✦ NOUVEAU — barre de progression */
+.barreStats {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+    font-size: 0.8em;
+}
+
+.barreLabel {
+    white-space: nowrap;
+    min-width: 80px;
+    font-size: 0.85em;
+    opacity: 0.8;
+}
+
+.barreContainer {
+    flex: 1;
+    height: 10px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+}
+
+.barreFill {
+    height: 100%;
+    width: 0%;
+    transition: width 1s ease;
+}
+
+.barreFill.ordinaire {
+    background: var(--blanc);
+}
+
+.barreFill.audacieuse {
+    background: var(--rouge-magique);
+}
+
+/* ── Layout général profil ────────────────────────── */
+
+.profil {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px;
+    flex-wrap: wrap;
+}
+
+
+/* ✦ NOUVEAU — variantes de couleur de la carte selon la voie */
+ 
+#monDestin.ordinaire {
+    border: 2px solid var(--blanc);
+    box-shadow: 0 0 15px var(--blanc);
+}
+ 
+#monDestin.ordinaire h2 {
+    color: var(--blanc);
+}
+ 
+#monDestin.audacieuse {
+    border: 2px solid var(--rouge-magique);
+    box-shadow: 0 0 15px var(--rouge-magique);
+}
+ 
+#monDestin.audacieuse h2 {
+    color: var(--rouge-magique);
+}
+
+/* Stats symboles */
+.barreSymboles {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 10px;
+}
+ 
+.statSymbole {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.75em;
+    opacity: 0.85;
+}
+ 
+.statSymboleIcon {
+    font-size: 1.4em;
+}
+ 
+/* Cartes detail dans le profil */
+#profilDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+    text-align: left;
+}
+

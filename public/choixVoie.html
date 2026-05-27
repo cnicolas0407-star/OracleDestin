@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Tirage du Destin</title>
+        <link rel="stylesheet" href="/css/normalize.css" />
+        <link rel="stylesheet" href="/css/nb.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+        <meta name="theme-Color" content="050510" />      
+        <script src="/js/choixVoie.js" defer></script>
+        <!--<script src=""></script> Ici les liens js -->
+    </head>
+    <body>
+        <header id="mainHeader">
+            <h1><strong>Choisissez votre Voie</strong></h1>
+        </header><!--Ici se termine le #mainHeader-->
+
+        <main id="pageContent" class="texte">
+            <p>Deux Voies s'offrent à toi : chacune mène à un destin différent, chacune a son prix. À toi de voir jusqu'où tu veux aller.</p>  
+
+        <div class="choix">
+            <div id="voieOrdinaire" class="voie">
+                <h2>Voie Ordinaire</h2>
+                <p> Des destins faciles à porter mais impossibles à prévoir. L'Oracle te facilite la vie...(ou presque). </p>
+                <button id="boutonVoieOrdinaire" onclick="ConfirmerVoie('ordinaire')">Je choisis la Voie Ordinaire</button>
+            </div>
+            <div id="voieAudacieuse" class="voie">
+                <h2>Voie Audacieuse </h2>
+                <p>Une roue plus risquée, des destins demandant audace et ingéniosité. L'Oracle récompense ceux qui osent  (à condition qu'ils aillent jusqu'au bout). </p>
+                <button id="boutonVoieAudacieuse" onclick="ConfirmerVoie('audacieuse')">Je choisis la voie  Audacieuse</button>
+            </div>
+
+        </div>
+        
+        </main><!--Ici se termine le #pageContent-->
+        
+        <div id="overlayConfirmation">
+            <div id="modaleConfirmation">
+                <h2 id="modaleTitre"></h2>
+                <p id="modaleTexte"></p>
+                <div id="modaleActions">
+                    <button id="btnConfirmer" onclick="procederTirage()">Interroger l'Oracle</button>
+                </div>
+                <button id="btnAnnuler" onclick="fermerModale()">Changer de Voie</button>
+            </div>
+        </div>
+
+    </body>
+</html>

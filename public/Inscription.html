@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Inscription</title>
+        <link rel="stylesheet" href="/css/normalize.css" />
+        <link rel="stylesheet" href="/css/nb.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+        <meta name="theme-Color" content="050510" />   
+        <!--<script src=""></script>
+        <script src=""></script> Ici les liens js -->
+    </head>
+    <body>
+        <h2 class="texte">Création de l'âme</h2>
+         <p id="messageRetour" class="message-retour" aria-live="polite"></p>
+
+        <form id="formInscription" class="formContainer" novalidate>
+
+            <input
+            type="text"
+            id="nom"
+            name="nom"
+            placeholder="Nom"
+            autocomplete="family-name"
+            required />
+        <p class="erreur-champ" id="errNom"></p>
+        
+            <input
+            type="text"
+            id="prenom"
+            name="prenom"
+            placeholder="Prénom"
+            autocomplete="given-name"
+            required />
+        <p class="erreur-champ" id="errPrenom"></p>
+    
+            <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            autocomplete="email"
+            required />
+        <p class="erreur-champ" id="errEmail"></p>
+
+            <input
+            type="password"
+            id="motDePasse"
+            name="motDePasse"
+            placeholder="Mot de passe (8 caractères min.)"
+            autocomplete="new-password"
+            required />
+        <p class="erreur-champ" id="errMdp"></p>
+
+            <input
+            type="password"
+            id="confirmation"
+            name="confirmation"
+            placeholder="Confirmer mot de passe"
+            autocomplete="new-password"
+            required />
+        <p class="erreur-champ" id="errConf"></p>
+
+            <button type="submit" id="btnInscrire"> Sceller mon âme</button>
+        </form>
+        <div>
+            <a href="/connexion.html"><button> Déjà inscrit ?</button></a>
+        </div> 
+
+        <script src="/js/inscription.js"></script>
+    </body>
+</html>
