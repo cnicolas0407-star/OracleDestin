@@ -566,8 +566,9 @@ input{
     display: flex;
     justify-content: center;
     gap: 40px;
-    margin-top: 35px;
+    margin-top: 10px;
     flex-wrap:wrap;
+    font-size: 1em;
 }
 .voie:hover{
     transform: scale(1.05);
@@ -585,7 +586,7 @@ input{
     border: 2px solid var(--blanc);
     background-color: rgba(20,20,30,0.7);
     backdrop-filter: blur(0.5px);
-    padding: 20px;
+    gap: 20px;
     width: 400px;
     max-width: 90%;
     box-shadow: 0 0 10px var(--blanc);
