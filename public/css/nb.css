@@ -568,7 +568,7 @@ input{
     gap: 40px;
     margin-top: 10px;
     flex-wrap:wrap;
-    font-size: 1em;
+    font-size: 0.8em;
 }
 .voie:hover{
     transform: scale(1.05);
@@ -586,7 +586,7 @@ input{
     border: 2px solid var(--blanc);
     background-color: rgba(20,20,30,0.7);
     backdrop-filter: blur(0.5px);
-    gap: 20px;
+    padding : 8px;
     width: 400px;
     max-width: 90%;
     box-shadow: 0 0 10px var(--blanc);
@@ -596,6 +596,7 @@ input{
 }
 #voieOrdinaire h2 {
     color: var(--blanc);
+    margin : 10px 0;
 }
 #boutonVoieOrdinaire {
     color: var(--blanc);
@@ -614,7 +615,7 @@ input{
 #voieAudacieuse {
     background-color: rgba(20,20,30,0.7);
     backdrop-filter: blur(0.5px);
-    padding: 20px;
+    padding: 8px;
     width: 400px;
     max-width: 90%;
     border: 2px solid var(--rouge-magique);
@@ -625,6 +626,7 @@ input{
 }
 #voieAudacieuse h2 {
     color: var(--rouge-magique);
+        margin : 10px 0;
 }
 #boutonVoieAudacieuse {
     color: var(--rouge-magique);
