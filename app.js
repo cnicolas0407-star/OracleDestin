@@ -305,10 +305,10 @@ const DESTINS = {
             artefact: "Accessoires de (très) mauvais goût trouvés à GIFI."
         },
         {
-            theme: "Gourou de secte",
-            signe: "Le mouvement commence toujours par une nuit. Ils te suivront sans savoir pourquoi.",
-            mission: "Recruter 3 disciples et leur enseigner un geste rituel secret.",
-            artefact: "Ton baton de gourou et ton propectus de recrutement"
+            theme: "Incarnation de ton signe astrologique",
+            signe: "Le ciel a gravé ton destin bien avant que tu ne le choisisses..",
+            mission: "Accuse au moins cinq personnes d'agir exactement comme leur signe astrologique, même si tu ignores complètement leur signe.",
+            artefact: "Objet représentant l'élément de ton signe + symbole de ton signe dessiné sur le front "
         },
         {
             theme: "Champion régional d'un sport inexistant",
