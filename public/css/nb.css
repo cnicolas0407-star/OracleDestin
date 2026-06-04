@@ -423,32 +423,6 @@ input{
     transform: scale(1.04);
 }
 
-#changerVoieButtonContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-    gap: 14px;
-    opacity: 0;
-    animation: apparition 0.8s ease 2s forwards;
-}
-#btnChangerVoie {
-    font-family: Cinzel;
-    font-size: 0.75em;
-    letter-spacing: 0.1em;
-    padding: 16px 40px;
-    border: 2px solid var(--dore);
-    color: var(--dore);
-    background: rgba(5,5,15,0.7);
-    transition: 0.4s;
-}
-
-#btnChangerVoie {
-    background: var(--dore);
-    color: var(--black);
-    box-shadow: 0 0 28px rgba(212,175,55,0.4);
-    transform: scale(1.04);
-}
 
 /* ═══════════════════════════════════════════════════════
    L'ORACLE DU DESTIN — Rituel CSS

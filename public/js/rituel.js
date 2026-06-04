@@ -252,6 +252,27 @@ document.addEventListener("DOMContentLoaded", () => {
 //  Navigation entre étapes
 // ──────────────────────────────────────────────
 
+function recommencerRituel() {
+    // Réinitialiser l'état
+    voieChoisie   = null;
+    symboleChoisi = null;
+ 
+    // Remettre les opacités des voies à leur état initial
+    document.getElementById("voieOrdinaire").style.opacity  = "";
+    document.getElementById("voieAudacieuse").style.opacity = "";
+ 
+    // Vider la réponse à la question
+    document.getElementById("reponseQuestion").value = "";
+ 
+    // Retirer la sélection éventuelle sur les symboles
+    document.querySelectorAll(".symboleBtn").forEach(b => b.classList.remove("selectionne"));
+ 
+    // Fermer la modale si ouverte
+    document.getElementById("overlayConfirmation").classList.remove("show");
+ 
+    allerEtape(1);
+}
+
 function allerEtape(num) {
     document.querySelectorAll(".etape").forEach((el, i) => {
         el.classList.toggle("active", i + 1 === num);
