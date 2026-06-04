@@ -511,6 +511,16 @@ input{
     font-style: italic;
 }
 
+#changerVoieButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    gap: 14px;
+    opacity: 0;
+    animation: apparition 0.8s ease 2s forwards;
+}
+
 /* ── Question absurde ── */
 
 .questionContainer {
