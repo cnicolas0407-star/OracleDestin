@@ -512,7 +512,7 @@ input{
     font-style: italic;
 }
 #btnChangerVoie {
-    animation: apparition 1s ease 1s forwards;
+    animation: apparition 1s ease 2s forwards;
 }
 
 
