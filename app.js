@@ -133,13 +133,13 @@ const DESTINS = {
             signe: "Tout est lié, tu le sais. Bientôt, tout le monde le saura.",
             mission: "Fais croire à 2 personnes que 2 invités sont liés par un secret",
             artefact: "Tableau avec des photos et des fils rouges (en miniature pour emmener partout) "
-        },
+        }/*,
         {
             theme: "Oeuvre d'art vivante",
             signe: "Tu seras regardé et interprété sans être compris.",
             mission: "3 personnes doivent te contempler et donner une interprétation différente de toi.",
             artefact: "Un cadre + fiche titre de l'oeuvre"
-        }
+        }*/
         
     ],
 
