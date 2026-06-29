@@ -59,7 +59,7 @@ const DESTINS = {
     "lune-ordinaire": [
         {
             theme: "Medium voyant frauduleux",
-            signe: "Tu vois et entends, les esprits ont parlé: ton verre ne restra pas vide.",
+            signe: "Tu vois et entends, les esprits ont parlé: ton verre ne restera pas vide.",
             mission: "Prédis 3 événements de la soirée à 3 personnes différentes en leur tirant les cartes (Les prédictions devront se réaliser)",
             artefact: "Une boule de cristal et Carnet de prédictions"
         },
@@ -147,7 +147,7 @@ const DESTINS = {
     "epees-ordinaire": [
         {
             theme: "Cougar/Pervers de boîte de nuit",
-            signe: "L'amour frappe toujours là où on ne l'attend pas. Tu devras cepedant attendre encore un peu.",
+            signe: "L'amour frappe toujours là où on ne l'attend pas. Tu devras cependant attendre encore un peu.",
             mission: "Placer des répliques de blagues lourdes et essayer de faire un coller/serrer",
             artefact: "Motif léopard/Col de chemise relevé "
         },
